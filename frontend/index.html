@@ -29,7 +29,7 @@
                 <div class="card">
                     <div class="card-header">Serie da vedere</div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" v-for="(serie, index) in serietv" v-show="serie.done">{{ serie.name }}</li>
+                        <li v-for="(serie, index) in serietv" :class="!serie.done ? 'text-decoration-line-trough' : '' " class="list-group-item" >{{ serie.name }}</li>
                     </ul>
                 </div>
             </div>

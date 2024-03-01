@@ -1,26 +1,26 @@
-    serietv : [
+   [
     {
-        name: "How i met your mom",
-        done: "true",
+        "name": "How i met your mom",
+        "done": true
     },
     {
-        name: "Friends",
-        done: true,
+        "name": "Friends",
+        "done": true
     },
     {
-        name: "Peaky Blinders",
-        done: true,
+        "name": "Peaky Blinders",
+        "done": true
     },
     {
-        name: "Narcos",
-        done: true,
+        "name": "Narcos",
+        "done": true
     },
     {
-        name: "Outer Banks",
-        done:  true,
+        "name": "Outer Banks",
+        "done":  true
     },
     {
-        name: "Gossip Girl",
-        done:  true,
-    },
-],
+        "name": "Gossip Girl",
+        "done":  true
+    }
+]
