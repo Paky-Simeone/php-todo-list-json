@@ -60,8 +60,25 @@ const app = createApp({
             };
 
             axios.post('../backend/api/update-serie.php', data, params).then((response) =>{
-                this.listaserie= response.data;
-            })
+                this.serietv = response.data;
+            });
+        },
+
+        // Metodo che elimina una task
+        fetchDeleteSerie(index){
+            const data = {
+                index,
+            };
+
+            const params = {
+                headers: {
+                    'Content-Type' : 'multipart/form-data'
+                }
+            };
+
+            axios.post('../backend/api/delete-serie.php', data, params).then((response) =>{
+                this.serietv = response.data;
+            });
         },
     },
 

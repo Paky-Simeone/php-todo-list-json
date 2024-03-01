@@ -8,6 +8,9 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -34,7 +37,7 @@
                 <div class="card">
                     <div class="card-header">Serie da vedere</div>
                     <ul class="list-group list-group-flush">
-                        <li v-for="(serie, index) in serietv"  class="list-group-item" :class="serie.done == true ? 'text-decoration-line-through' : '' " @click="fetchUpdateSerie(index, serie)">{{ serie.name }}</li>
+                        <li v-for="(serie, index) in serietv"  class="list-group-item d-flex justify-content-between" :class="serie.done == true ? 'text-decoration-line-through' : '' " @click="fetchUpdateSerie(index, serie)"> <span>{{ serie.name }}</span> <i class="bi bi-trash text-danger" @click="fetchDeleteSerie(index)"></i></li>
                     </ul>
                 </div>
             </div>
