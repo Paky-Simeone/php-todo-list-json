@@ -9,4 +9,9 @@ $listaserie = json_decode($json_listaserie, true);
 
 $listaserie[] = $new_serie;
 
-$json_listaserie = json_encode($new_serie);
+$json_listaserie = json_encode($listaserie);
+
+file_put_contents('../data/listaserie.json', $json_listaserie);
+
+header('Content-Type: application/json');
+echo $json_listaserie;

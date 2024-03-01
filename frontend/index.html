@@ -34,7 +34,7 @@
                 <div class="card">
                     <div class="card-header">Serie da vedere</div>
                     <ul class="list-group list-group-flush">
-                        <li v-for="(serie, index) in serietv"  class="list-group-item" :class="serie.done == false ? 'text-decoration-line-through' : '' ">{{ serie.name }}</li>
+                        <li v-for="(serie, index) in serietv"  class="list-group-item" :class="serie.done == true ? 'text-decoration-line-through' : '' " @click="fetchUpdateSerie(index, serie)">{{ serie.name }}</li>
                     </ul>
                 </div>
             </div>

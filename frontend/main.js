@@ -39,8 +39,29 @@ const app = createApp({
 
             // richiesta
             axios.post('../backend/api/store-serie.php', data, params).then((response) => {
-                console.log(response.data);
+                this.serietv = response.data;
             });
+        },
+
+        // Metodo che modifica la serie
+        fetchUpdateSerie(index, serie){
+            const newstatus = !serie.done;
+
+            const data= {
+                index,
+                name: serie.name,
+                done: newstatus,
+            };
+
+            const params = {
+                headers: {
+                    'Content-Type' : 'multipart/form-data'
+                }
+            };
+
+            axios.post('../backend/api/update-serie.php', data, params).then((response) =>{
+                this.listaserie= response.data;
+            })
         },
     },
 
