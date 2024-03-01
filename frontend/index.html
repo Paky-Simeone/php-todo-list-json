@@ -23,13 +23,18 @@
 <body>
     <div id="app">
         <div class="container mt-5">
-            <h1 class="text-center">{{ title }}</h1>
+            <h1 class="text-center mb-5">{{ title }}</h1>
 
-            <div class="d-flex justify-content-center mt-5">
+            <div class="input-group mb-3">
+                <input v-model="newserie.name" @keyUp.enter="fetchStoreSerie()" type="text" class="form-control" placeholder="Nuova Serie..." aria-label="Nuova Serie..." aria-describedby="button-add-serie" />
+                <button @click="fetchStoreSerie()" class="btn btn-outline-secondary" type="button" id="button-add-serie">Button</button>
+              </div>
+
+            <div class="d-flex justify-content-center mt-3">
                 <div class="card">
                     <div class="card-header">Serie da vedere</div>
                     <ul class="list-group list-group-flush">
-                        <li v-for="(serie, index) in serietv" :class="!serie.done ? 'text-decoration-line-trough' : '' " class="list-group-item" >{{ serie.name }}</li>
+                        <li v-for="(serie, index) in serietv"  class="list-group-item" :class="serie.done == false ? 'text-decoration-line-through' : '' ">{{ serie.name }}</li>
                     </ul>
                 </div>
             </div>
