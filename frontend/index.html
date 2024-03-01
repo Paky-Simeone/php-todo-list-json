@@ -16,10 +16,24 @@
 
     <!-- JS -->
     <script src="./main.js" defer></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="app">
+        <div class="container mt-5">
+            <h1 class="text-center">{{ title }}</h1>
 
+            <div class="d-flex justify-content-center mt-5">
+                <div class="card">
+                    <div class="card-header">Serie da vedere</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" v-for="(serie, index) in serietv" v-show="serie.done">{{ serie.name }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
